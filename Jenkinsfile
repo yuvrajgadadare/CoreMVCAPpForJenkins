@@ -21,7 +21,19 @@ pipeline {
             }
 
         }
+        stage {
+            steps {
+                script {
+                    bat "dotnet publish --no-restore --configuration Release --output .\\publish"
+                }
+            }
+        }
 
+    }
+    post {
+        success {
+            echo "Build, TEst and Publish stages completed successfully."
+        }
     }
 
 }
