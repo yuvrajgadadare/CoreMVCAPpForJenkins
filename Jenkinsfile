@@ -21,7 +21,7 @@ pipeline {
             }
 
         }
-        stage {
+        stage("Publish") {
             steps {
                 script {
                     bat "dotnet publish --no-restore --configuration Release --output .\\publish"
