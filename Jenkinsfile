@@ -15,6 +15,12 @@ pipeline {
                 bat "dotnet build --configuration Release"
             }
         }
+        stage("Test") {
+            steps {
+                bat "dotnet test --no-restore --configuration Release"
+            }
+
+        }
 
     }
 
