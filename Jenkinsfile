@@ -9,9 +9,13 @@ pipeline {
                checkout scm
          }
         }
-        stage("Build") {
+        stage("Restore") {
             steps {
                 bat "dotnet restore"
+            }
+        }
+        stage("Build") {
+            steps {
                 bat "dotnet build --configuration Release"
             }
         }
